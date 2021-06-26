@@ -1,9 +1,17 @@
-FROM debian:latest
+FROM debian:stable-slim
 
 LABEL maintainer="mcbplay1@gmail.com"
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends xz-utils unzip screen wget && \
+	apt-get -y install --no-install-recommends wget locales procps && \
+	touch /etc/locale.gen && \
+	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
+	locale-gen && \
+	apt-get -y install --reinstall ca-certificates && \
+	rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && \
+	apt-get -y install --no-install-recommends xz-utils unzip screen && \
 	rm -rf /var/lib/apt/lists/*
 
 RUN wget -O /tmp/gotty.tar.gz https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz && \

@@ -29,7 +29,7 @@ ENV UMASK=000
 ENV UID=99
 ENV GID=100
 ENV SERVER_KEY="wmvpuernyr8phixno3afnnahjapalsvu"
-ENV START_VARS="+set txAdminPort 40125"
+ENV START_VARS="+set txAdminPort 40124"
 ENV DATA_PERM=770
 ENV USER="fivem"
 

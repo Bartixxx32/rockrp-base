@@ -1,6 +1,6 @@
-FROM ich777/debian-baseimage
+FROM debian:latest
 
-LABEL maintainer="admin@minenet.at"
+LABEL maintainer="mcbplay1@gmail.com"
 
 RUN apt-get update && \
 	apt-get -y install --no-install-recommends xz-utils unzip screen && \

@@ -3,7 +3,7 @@ FROM debian:latest
 LABEL maintainer="mcbplay1@gmail.com"
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends xz-utils unzip screen && \
+	apt-get -y install --no-install-recommends xz-utils unzip screen wget && \
 	rm -rf /var/lib/apt/lists/*
 
 RUN wget -O /tmp/gotty.tar.gz https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz && \
